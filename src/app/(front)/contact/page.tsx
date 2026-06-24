@@ -6,9 +6,10 @@ export default function ContactPage() {
   return (
     <main className="container max-w-6xl py-12 px-4 mx-auto">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">ติดต่อเรา</h1>
+        <h1 className="text-4xl font-bold tracking-tight mb-4">ติดต่อเรา HI</h1>
+        <h3>lorem</h3>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          หากคุณมีคำถามหรือข้อสงสัยประการใด สามารถติดต่อเราได้ผ่านช่องทางด้านล่างนี้ 
+          หากคุณมีคำถามหรือข้อสงสัยประการใด สามารถติดต่อเราได้ผ่านช่องทางด้านล่างนี้
           เรายินดีที่จะช่วยเหลือและตอบคำถามของคุณโดยเร็วที่สุด
         </p>
       </div>
@@ -44,11 +45,11 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-          
+
           <Separator />
-          
+
           <p className="text-muted-foreground">
-            เรามุ่งมั่นที่จะให้บริการที่ดีที่สุดแก่ลูกค้าของเรา หากคุณต้องการความช่วยเหลือ 
+            เรามุ่งมั่นที่จะให้บริการที่ดีที่สุดแก่ลูกค้าของเรา หากคุณต้องการความช่วยเหลือ
             ด่วนกรุณาส่งข้อความผ่านฟอร์มด้านขวา หรือติดต่อผ่านช่องทางที่ระบุไว้ด้านบน
           </p>
         </div>
