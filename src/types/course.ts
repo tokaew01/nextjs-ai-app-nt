@@ -1,0 +1,8 @@
+export type Course = {
+  id: number;
+  title: string;
+  detail: string;
+  picture: string;
+  view: number;
+  date: string;
+};
