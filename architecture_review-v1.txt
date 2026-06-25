@@ -1,0 +1,35 @@
+# Architectural Review Report: nextjs-ai-app-starter
+
+## Executive Summary
+Modern Thai e-commerce starter using Next.js 16, MariaDB, and Better-Auth. It features a decoupled architecture with separate layouts for Auth and Front ends. While the stack is state-of-the-art, the promised "Cache Components" model (`use cache`) is currently not implemented in the code.
+
+## Key Strengths
+- Cutting-Edge Stack: Next.js 16, Tailwind v4, and React 19.
+- Domain Separation: Clear layout boundaries via (auth) and (front) route groups.
+- Optimized DB: Efficient MariaDB integration via @prisma/adapter-mariadb.
+- Localized UX: Correct lang="th" and Prompt font implementation.
+- State Management: Persisted Zustand store for a seamless cart experience.
+
+## Findings by Severity
+- High: `use cache` directives are completely missing despite being a core project architectural goal.
+- Medium: Prisma client is generated outside src/, which may cause IDE tooling issues.
+- Medium: Email verification is disabled in auth.ts, posing a production risk.
+- Low: Optional fields in schema.prisma lead to excessive null-checking in UI.
+
+## Recommended Improvements
+1. Implement `use cache`: Apply the directive to read-heavy components (Product Lists, etc.).
+2. Dynamic Rendering: Use connection() from next/server in server components performing DB queries.
+3. Strict Schema: Make critical product fields mandatory in Prisma.
+4. Security Hardening: Enable email verification in Better-Auth.
+
+## Architecture Scorecard
+- Tech Stack: 10/10 (State-of-the-art selection)
+- Structure: 9/10 (Excellent route group usage)
+- Performance: 5/10 (`use cache` not utilized)
+- Security: 7/10 (Needs production hardening)
+- Localization: 10/10 (Proper Thai implementation)
+
+Overall Score: 8.2/10
+
+## Final Verdict
+APPROVED WITH REMEDIATION. Architecturally sound. Implementation of the caching model is required to meet the project's stated performance goals.

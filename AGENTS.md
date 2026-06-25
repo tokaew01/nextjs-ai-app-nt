@@ -1,20 +1,22 @@
 <!-- BEGIN:nextjs-agent-rules -->
+
 # This is NOT the Next.js you know
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+
 <!-- END:nextjs-agent-rules -->
 
 ## Quickstart
 
-| Command | Purpose |
-|---------|---------|
-| `npm run dev` | Dev server (Turbopack) |
-| `npm run build` | Production build |
-| `npm run start` | Production server |
-| `npm run lint` | ESLint v9 flat config |
-| `npx tsc --noEmit` | Type-check (no script) |
-| `npx prisma generate` | Regenerate Prisma client |
-| `npx prisma migrate dev` | Run migrations |
+| Command                  | Purpose                  |
+| ------------------------ | ------------------------ |
+| `npm run dev`            | Dev server (Turbopack)   |
+| `npm run build`          | Production build         |
+| `npm run start`          | Production server        |
+| `npm run lint`           | ESLint v9 flat config    |
+| `npx tsc --noEmit`       | Type-check (no script)   |
+| `npx prisma generate`    | Regenerate Prisma client |
+| `npx prisma migrate dev` | Run migrations           |
 
 No test runner, no formatter configured.
 
@@ -37,3 +39,7 @@ No test runner, no formatter configured.
 - Route handlers use Better-Auth's `auth.handler()` from `better-auth/next-js`.
 - Auth login page links to `signup` (route is `/signup`, not `/register`).
 - No CI, no tests.
+
+## Development Guides
+
+- For TypeScript coding standards and patterns, refer to `docs/typescript-guidelines.md`.

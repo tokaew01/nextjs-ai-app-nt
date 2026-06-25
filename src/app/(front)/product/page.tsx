@@ -1,16 +1,17 @@
 import FeaturesProduct from "@/components/features-product";
 import prisma from "@/lib/prisma";
 import type { Metadata } from "next";
-import { connection } from "next/server";
+import { cacheLife } from "next/cache";
 
 export const metadata: Metadata = {
   title: "สินค้าทั้งหมด",
   description: "รายการสินค้าจากฐานข้อมูล eCommerce",
 };
 
-// http://localhost:3000/product
 export default async function ProductPage() {
-  await connection(); // signals this is a dynamic route
+  "use cache";
+  cacheLife("hours");
+
   const products = await prisma.products.findMany({
     include: {
       categories: true,
