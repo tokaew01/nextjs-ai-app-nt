@@ -29,7 +29,7 @@ const priceFormatter = new Intl.NumberFormat("th-TH", {
 const FeaturesProduct = ({ products }: Props) => {
   return (
     <section className="mx-auto flex max-w-7xl flex-col px-6 py-14 sm:py-20">
-      <h2 className="text-pretty text-center font-medium text-4xl tracking-[-0.04em] sm:text-[2.75rem]">
+      <h2 className="text-pretty text-center font-sans font-medium text-4xl tracking-[-0.04em] sm:text-[2.75rem]">
         สินค้าทั้งหมด
       </h2>
 
@@ -38,11 +38,11 @@ const FeaturesProduct = ({ products }: Props) => {
           ยังไม่มีสินค้าในฐานข้อมูล
         </div>
       ) : (
-      <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid grid-cols-2 gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (
           <article className="flex rounded-lg border bg-card px-6 py-7" key={product.id}>
             <div className="flex w-full flex-col">
-              <div className="relative mb-5 aspect-4/5 w-full overflow-hidden rounded-lg bg-muted sm:mb-6">
+              <div className="relative mb-5 aspect-1/1 w-full overflow-hidden rounded-lg bg-muted sm:mb-6">
                 <Image
                   alt={product.name}
                   className="object-cover"

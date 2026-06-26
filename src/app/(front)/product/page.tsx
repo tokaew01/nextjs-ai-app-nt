@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ProductPage() {
-  connection();
+  await connection();
 
   const products = await prisma.products.findMany({
     include: {
