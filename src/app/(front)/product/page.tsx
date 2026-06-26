@@ -1,7 +1,7 @@
 import FeaturesProduct from "@/components/features-product";
 import prisma from "@/lib/prisma";
 import type { Metadata } from "next";
-import { cacheLife } from "next/cache";
+import { connection } from "next/server";
 
 export const metadata: Metadata = {
   title: "สินค้าทั้งหมด",
@@ -9,8 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ProductPage() {
-  "use cache";
-  cacheLife("hours");
+  connection();
 
   const products = await prisma.products.findMany({
     include: {
