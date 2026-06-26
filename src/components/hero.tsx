@@ -1,34 +1,11 @@
 import { ArrowUpRight, CirclePlay } from "lucide-react";
 import Link from "next/link";
-import localFont from "next/font/local";
-import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-const mitr = localFont({
-  src: [
-    {
-      path: "../../public/fonts/Mitr-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Mitr-Medium.ttf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Mitr-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  display: "swap",
-});
-
 export default function Hero() {
   return (
-    <div className={cn(mitr.className, "flex min-h-screen items-center justify-center px-6")}>
+    <div className="flex min-h-screen items-center justify-center px-6">
 
       <div className="relative z-10 max-w-3xl text-center">
         <Badge

@@ -7,7 +7,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: 'Lora', var(--font-sans);
+  --font-sans: var(--font-mitr), 'Lora', var(--font-sans);
   --font-mono: 'Source Code Pro', var(--font-geist-mono);
   --font-heading: 'Playfair Display', var(--font-heading);
   
