@@ -85,7 +85,7 @@ export function ContactForm() {
               placeholder="กรอกชื่อของคุณ" 
               {...form.register("name")} 
             />
-            <FieldError errors={form.formState.errors.name?.types} />
+            <FieldError errors={form.formState.errors.name?.types ? Object.values(form.formState.errors.name.types).map(msg => ({ message: String(msg) })) : undefined} />
           </FieldContent>
         </Field>
 
@@ -97,7 +97,7 @@ export function ContactForm() {
               placeholder="example@email.com" 
               {...form.register("email")} 
             />
-            <FieldError errors={form.formState.errors.email?.types} />
+            <FieldError errors={form.formState.errors.email?.types ? Object.values(form.formState.errors.email.types).map(msg => ({ message: String(msg) })) : undefined} />
           </FieldContent>
         </Field>
 
@@ -109,7 +109,7 @@ export function ContactForm() {
               placeholder="พิมพ์ข้อความที่ต้องการ..." 
               {...form.register("message")} 
             />
-            <FieldError errors={form.formState.errors.message?.types} />
+            <FieldError errors={form.formState.errors.message?.types ? Object.values(form.formState.errors.message.types).map(msg => ({ message: String(msg) })) : undefined} />
           </FieldContent>
         </Field>
       </FieldGroup>

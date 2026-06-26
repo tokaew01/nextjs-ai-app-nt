@@ -2,19 +2,19 @@ import { Resend } from "resend";
 import { contactSchema } from "@/lib/validations/contact";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 type ApiResponse<T> = { success: true; data: T } | { success: false; error: string };
 
 export async function POST(req: Request) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
     const body = await req.json();
     const result = contactSchema.safeParse(body);
 
     if (!result.success) {
       return NextResponse.json({ 
         success: false, 
-        error: result.error.errors[0].message 
+        error: result.error.issues[0].message 
       }, { status: 400 });
     }
 
